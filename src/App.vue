@@ -1,6 +1,7 @@
 <template>
   <v-app>
-    <v-content>
+    <NavBar />
+    <v-content> 
       <LoginForm/>
     </v-content>
   </v-app>
@@ -8,14 +9,14 @@
 
 <script>
 import LoginForm from '@/components/LoginForm';
+import NavBar from '@/components/NavBar';
 
 export default {
   name: 'App',
-
   components: {
     LoginForm,
+    NavBar
   },
-
   data: () => ({
     //
   }),
