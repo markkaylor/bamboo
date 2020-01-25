@@ -1,6 +1,6 @@
 <template>
   <v-app-bar app>
-    <v-bar-title>{{ siteTitle }}</v-bar-title>
+    <v-toolbar-title>{{ siteTitle }}</v-toolbar-title>
     <v-spacer />
     <router-link :to="{name: 'sign-in'}">
       <v-btn text>Sign In</v-btn>

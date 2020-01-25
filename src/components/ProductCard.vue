@@ -1,23 +1,20 @@
 <template>
-  <v-card width="600">
-    <v-card-title>{{ product.name }}</v-card-title>
-    <v-card-subtitle>{{ product.description }}</v-card-subtitle>
-  </v-card>
+  <router-link :to="{name: 'product-show', params: {id: product.id }}">
+    <v-card width="800" class="mb-5">
+      <v-card-title>{{ product.name }}</v-card-title>
+      <v-card-text>
+        Insure your {{ product.name }} for the holiday weekend
+      </v-card-text>
+    </v-card>
+  </router-link>
 </template>
 
 <script>
   export default {
-    data() {
-      return {
-        product: {
-          name: 'Iphone',
-          description: 'Insure youe iphone for the holiday weekend'
-        }
+    props: {
+      product: {
+        type: Object,
       }
     }
   }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

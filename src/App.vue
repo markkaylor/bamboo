@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <nav-bar />
-    <v-content width="1200" class="mx-auto"> 
+    <v-content width="1200" class="mx-auto mt-5"> 
       <router-view />
     </v-content>
   </v-app>
