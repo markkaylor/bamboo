@@ -1,27 +1,25 @@
 <template>
   <v-app-bar app>
-    <v-bar-title>Bamboo</v-bar-title>
+    <v-bar-title>{{ siteTitle }}</v-bar-title>
     <v-spacer />
-    <v-btn 
-      text
-      v-for="link in links"
-      :key="link"
-    >
-      {{ link }}
-    </v-btn>
+    <router-link :to="{name: 'sign-in'}">
+      <v-btn text>Sign In</v-btn>
+    </router-link>
+    <router-link :to="{name: 'products'}">
+      <v-btn text>Products</v-btn>
+    </router-link>
   </v-app-bar>
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        links: [
-          'Products',
-          'Login',
-        ]
-      }
+export default {
+  data() {
+    return {
+      siteTitle: 'Bamboo'
     }
   }
+}
 </script>
+
+
 

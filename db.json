@@ -1,10 +1,10 @@
 {
   "products": [
     { "id": 1, "name": "iphone" },
-    { "id": 2, "name": "iphone" },
-    { "id": 3, "name": "iphone" },
-    { "id": 4, "name": "iphone" },
-    { "id": 5, "name": "iphone" },
-    { "id": 6, "name": "iphone" }
+    { "id": 2, "name": "android" },
+    { "id": 3, "name": "ipad" },
+    { "id": 4, "name": "mac book pro" },
+    { "id": 5, "name": "pickle" },
+    { "id": 6, "name": "flop" }
   ]  
 }
