@@ -1,7 +1,7 @@
 <template>
   <v-card width="500">
       <v-form>
-        <v-card-title>Add a Product</v-card-title>
+        <v-card-title>Add a Product:</v-card-title>
         <v-card-text> 
           <v-text-field 
             v-model="product.name"
@@ -13,21 +13,25 @@
             label="Product Description"
           />
         </v-card-text>
-        <v-card-title>Add the Contract for this Product</v-card-title>   
+        <v-card-title>What types of contracts are available?</v-card-title>   
         <v-card-text>
-          <v-row justify="center">
-            <v-date-picker
-              v-model="product.contract.dates"
-              label="Choose the start and end date"
-              landscape
-              range
+          <v-row justify="space-around">
+            <v-checkbox 
+              label="Day"
+              value="Day"
+              v-model="product.contractsAvailable.day"
+            />
+            <v-checkbox 
+              label="Weekend"
+              value="Weekend"
+              v-model="product.contractsAvailable.weekend"
+            />
+            <v-checkbox 
+              label="Week"
+              value="Week"
+              v-model="product.contractsAvailable.week"
             />
           </v-row>
-          <v-text-field v-model="dateRangeText" label="Dates Selected" readonly />
-          <v-text-field
-            v-model="product.contract.price"
-            label="price"
-          />
           <v-btn 
             color="success"
             @click="createProduct"
@@ -48,9 +52,9 @@ export default {
     }
   },
   computed: {
-    dateRangeText () {
-      return this.product.contract.dates.join(' ~ ')
-    },
+    // dateRangeText () {
+    //   return this.product.contract.dates.join(' ~ ')
+    // },
   },
   methods: {
     createProduct() {
@@ -71,10 +75,12 @@ export default {
       return {
         name: '',
         description: '',
-        contract: {
-          price: '',
-          dates: [],
+        contractsAvailable: {
+          day: '',
+          weekend: '',
+          week: '',
         },
+        coverage: []
       }
     },
   },

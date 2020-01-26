@@ -1,40 +1,15 @@
 {
   "products": [
     {
-      "name": "Iphone",
-      "description": "Insure your iphone for the weekend!",
-      "contract": {
-        "price": "50",
-        "dates": [
-          "2020-01-31",
-          "2020-02-03"
-        ]
+      "name": "iPhone",
+      "description": "Insure your iPhone! we have many short term policies available!",
+      "contractsAvailable": {
+        "day": "Day",
+        "weekend": "Weekend",
+        "week": "Week"
       },
+      "coverage": [],
       "id": 1
-    },
-    {
-      "name": "Ipad",
-      "description": "Insure your ipad for the week!",
-      "contract": {
-        "price": "150",
-        "dates": [
-          "2020-01-27",
-          "2020-01-31"
-        ]
-      },
-      "id": 2
-    },
-    {
-      "name": "Mac Book Pro",
-      "description": "Insure your macbook pro for a month!",
-      "contract": {
-        "price": "200",
-        "dates": [
-          "2020-02-01",
-          "2020-02-29"
-        ]
-      },
-      "id": 3
     }
   ]
 }

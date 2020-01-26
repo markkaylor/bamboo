@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div v-if="product.products">
     <h1>Product List</h1>
       <product-card 
-        v-for="product in products" 
+        v-for="product in product.products" 
         :key="product.id"
         :product="product"
       />
@@ -11,25 +11,17 @@
 
 <script>
 import ProductCard from '@/components/ProductCard.vue'
-import ProductService from '@/services/ProductService.js'
+import { mapState } from 'vuex'
 
 export default {
   components: {
     ProductCard
   }, 
-  data() {
-    return {
-      products: [],
-    }
-  },
   created() {
-    ProductService.getProducts()
-      .then(response => {
-        this.products = response.data
-      })
-      .catch(error => {
-        console.log('there was an error ' + error.response)
-      })
+    this.$store.dispatch('fetchProducts')
+  },
+  computed: {
+    ...mapState(['product'])
   }
 }
 </script>
