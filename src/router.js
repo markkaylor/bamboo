@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import SignIn from '@/views/SignIn.vue'
 import ProductList from '@/views/ProductList.vue'
 import ProductShow from '@/views/ProductShow.vue'
+import ProductCreate from '@/views/ProductCreate.vue'
 
 Vue.use(Router)
 
@@ -24,6 +25,11 @@ export default new Router({
       path: '/products',
       name: 'products',
       component: ProductList
+    },
+    {
+      path: '/product-create',
+      name: 'product-create',
+      component: ProductCreate
     }
   ]
 })

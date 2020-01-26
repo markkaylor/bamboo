@@ -1,20 +1,24 @@
 <template>
-  <h1>{{ product.name }}</h1>
+ <div>hello</div>
 </template>
 
 <script>
 import ProductService from '@/services/ProductService.js'
 
+
 export default {
   props: {
     id: {
-      type: Number
+      type: String
     }
   },
   data() {
     return {
       product: {}
     }
+  },
+  computed: {
+    
   },
   created() {
     ProductService.getProduct(this.id)
@@ -24,6 +28,7 @@ export default {
       .catch(error => {
         console.log('woah there was an error ' + error)
       })
-  }
+  },
+
 }
 </script>
