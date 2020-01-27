@@ -10,6 +10,105 @@
       },
       "coverage": [],
       "id": 1
+    },
+    {
+      "name": "A new test product",
+      "description": "with wrods about word",
+      "contractsAvailable": {
+        "day": "Day",
+        "weekend": "Weekend",
+        "week": ""
+      },
+      "coverage": [],
+      "id": 2
+    },
+    {
+      "name": "Testing again a product",
+      "description": "sadfsdfds",
+      "contractsAvailable": {
+        "day": "Day",
+        "weekend": "",
+        "week": ""
+      },
+      "coverage": [],
+      "id": 3
+    },
+    {
+      "name": "dfad",
+      "description": "afdfds",
+      "contractsAvailable": {
+        "day": "",
+        "weekend": "Weekend",
+        "week": ""
+      },
+      "coverage": [],
+      "id": 4
+    }
+  ],
+  "contracts": [
+    {
+      "firstName": "bob",
+      "lastName": "evans",
+      "dates": [
+        "2020-01-28",
+        "2020-01-29"
+      ],
+      "type": "Weekend",
+      "email": "bob@evans.com",
+      "id": 1
+    },
+    {
+      "firstName": "Test",
+      "lastName": "testlast",
+      "dates": [
+        "2020-01-28"
+      ],
+      "type": "Day",
+      "email": "test@last.com",
+      "id": 2
+    },
+    {
+      "firstName": "asdfadsf",
+      "lastName": "asdfads",
+      "dates": [
+        "2020-01-28",
+        "2020-01-29"
+      ],
+      "type": "Weekend",
+      "email": "sdfadsf",
+      "id": 3
+    },
+    {
+      "firstName": "asdfdasf",
+      "lastName": "asdfasd",
+      "dates": [
+        "2020-01-28",
+        "2020-01-30"
+      ],
+      "type": "Weekend",
+      "email": "asdfasdf@sdafsdf.com",
+      "id": 4
+    },
+    {
+      "firstName": "test",
+      "lastName": "test",
+      "dates": [
+        "2020-01-20",
+        "2020-01-24"
+      ],
+      "type": "Week",
+      "email": "test@email.com",
+      "id": 5
+    },
+    {
+      "firstName": "adsdfg",
+      "lastName": "sdf",
+      "dates": [
+        "2020-01-20",
+        "2020-01-24"
+      ],
+      "type": "Week",
+      "id": 6
     }
   ]
 }

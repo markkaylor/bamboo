@@ -1,22 +1,13 @@
-import axios from 'axios'
-    
-const apiClient = axios.create({  
-  baseURL: `http://localhost:3000`,
-  withCredentials: false, // This is the default
-  headers: {
-    Accept: 'application/json',
-    'Content-Type': 'application/json'
-  }
-})
+import ApiClient from '@/services/ApiClient.js'    
 
 export default {
   getProducts() {
-    return apiClient.get('/products')
+    return ApiClient.get('/products')
   },
   getProduct(id) {
-    return apiClient.get('/products/' + id)
+    return ApiClient.get('/products/' + id)
   },
   postProduct(product) {
-    return apiClient.post('/products', product)
+    return ApiClient.post('/products', product)
   }
 }

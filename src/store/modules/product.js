@@ -8,27 +8,30 @@ export const state = {
 export const mutations = {
   /**
    * 
-   * @param {*} state 
-   * @param {*} product 
+   * @param {Object} state the current state for product
+   * @param {Object} product the product to be added to products array
    * 
-   * Set product state to payload of newly created product
    */
   ADD_PRODUCT(state, product) {
     state.products.push(product)
   },
   /**
    * 
-   * @param {*} state 
-   * @param {*} products 
+   * @param {Object} state 
+   * @param {Object} product product to be set to state product object
+   */
+  SET_PRODUCT(state, product) {
+    state.product = product
+  },
+  /**
    * 
-   * Set products state to payload of available products
+   * @param {Object} state 
+   * @param {array} products array of product objects set to state
+   * 
    */
   SET_PRODUCTS(state, products) {
     state.products = products
   },
-  SET_PRODUCT(state, product) {
-    state.product = product
-  }
 }
 
 export const actions = {
