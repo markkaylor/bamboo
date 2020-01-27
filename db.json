@@ -110,5 +110,19 @@
       "type": "Week",
       "id": 6
     }
+  ],
+  "users": [
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 1
+    },
+    {
+      "name": "bob2",
+      "email": "bob2@evans.com",
+      "password": "123123123",
+      "id": 2
+    }
   ]
 }
