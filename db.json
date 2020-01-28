@@ -113,15 +113,17 @@
   ],
   "users": [
     {
-      "name": "",
-      "email": "",
-      "password": "",
+      "email": "pickle@pickle.com",
+      "password": "$2a$10$D6xkJqzlFOBRDxAds0OcOepKvrPPkCYxhUwKn3MT4Jm01kjXKerp.",
+      "name": "pickle",
+      "admin": false,
       "id": 1
     },
     {
-      "name": "bob2",
-      "email": "bob2@evans.com",
-      "password": "123123123",
+      "email": "sdaf@asdfasd.com",
+      "password": "$2a$10$zjQkM4ZDmGKuxniDUS8SquytVwee7J2qrfNCMywykqXsxRlwdl6Uq",
+      "name": "asdf",
+      "admin": false,
       "id": 2
     }
   ]

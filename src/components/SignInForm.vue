@@ -32,7 +32,7 @@
       <v-btn 
         color="success"
         block
-        @click="createUser"
+        @click="toggleMethod"
       >
         {{ action }}
       </v-btn>
@@ -80,6 +80,9 @@
       },
       hasAccountAction() {
         return this.newUser ? 'Sign In' : 'Sign Up'
+      },
+      toggleMethod() {
+        return this.newUser ? this.createUser : this.signInUser
       }
     },
     methods: {
@@ -90,7 +93,18 @@
         this.showPassword = !this.showPassword
       },
       createUser() {
-        this.$store.dispatch('createUser', this.user)
+        this.$store.dispatch('createUser', this.user).then(() => {
+          console.log('yes')
+        })
+      },
+      signInUser() {
+        this.$store.dispatch('signInUser', {
+          email: this.user.email,
+          password: this.user.password
+        })
+        .then(() => {
+          console.log('You all logged in bro')
+        })
       }
     }
   })

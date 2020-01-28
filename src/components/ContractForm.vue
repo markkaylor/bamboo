@@ -52,7 +52,6 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
 
 export default {
   data() {
@@ -72,11 +71,7 @@ export default {
       required: true,
     }
   },
-  computed: {
-    ...mapState({
-      product: state => state.product.product
-    }),
-    
+  computed: {    
   //   daysSelected() {
   //     return this.contract.dates[1] - this.contract.dates[0] + 1
   //   },
