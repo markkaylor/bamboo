@@ -3,7 +3,7 @@ import axios from 'axios'
 
 export const state = {
   users: [],
-  user: {},
+  user: null,
 }
 
 export const mutations = {
@@ -16,7 +16,7 @@ export const mutations = {
     axios.defaults.headers.common['Authorization'] = `Bearer ${
       user.token
     }`
-  }
+  },
 }
 
 export const actions = {
@@ -26,9 +26,12 @@ export const actions = {
       commit('SET_USER', user)
     })
   },
-  signInUser({ commit }, user) {
-    return UserService.authUser(user).then(() => {
-      commit('SET_USER', user)
+  signInUser({ commit }, currentUser) {
+    return UserService.authUser(currentUser).then(() => {
+      UserService.getUsers().then(response => {
+        const user = response.data.find(user => user.email === currentUser.email)
+        commit('SET_USER', user)
+      })
     })
   }
 }

@@ -6,29 +6,12 @@ export const state = {
 }
 
 export const mutations = {
-  /**
-   * 
-   * @param {Object} state the current state for product
-   * @param {Object} product the product to be added to products array
-   * 
-   */
   ADD_PRODUCT(state, product) {
     state.products.push(product)
   },
-  /**
-   * 
-   * @param {Object} state 
-   * @param {Object} product product to be set to state product object
-   */
   SET_PRODUCT(state, product) {
     state.product = product
   },
-  /**
-   * 
-   * @param {Object} state 
-   * @param {array} products array of product objects set to state
-   * 
-   */
   SET_PRODUCTS(state, products) {
     state.products = products
   },

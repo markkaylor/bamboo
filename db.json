@@ -125,6 +125,13 @@
       "name": "asdf",
       "admin": false,
       "id": 2
+    },
+    {
+      "email": "john@smith.com",
+      "password": "$2a$10$QC4IRBu9V50JDMWOQ9ypFuMx3axK43KOSNnsh/VC7OKAa2We0qN3e",
+      "name": "john",
+      "admin": false,
+      "id": 3
     }
   ]
 }

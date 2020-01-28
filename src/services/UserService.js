@@ -7,5 +7,9 @@ export default {
 
   authUser(user) {
     return ApiClient.post('/signin', user)
-  }
+  },
+
+  getUsers() {
+    return ApiClient.get('/users')
+  },
 }
