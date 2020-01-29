@@ -63,6 +63,20 @@
         "Damage"
       ],
       "id": 5
+    },
+    {
+      "name": "product",
+      "description": "dsafasdfd",
+      "contractsAvailable": [
+        "Day",
+        "Weekend",
+        "Week"
+      ],
+      "coverage": [
+        "theft",
+        "loss"
+      ],
+      "id": 6
     }
   ],
   "contracts": [
@@ -77,6 +91,51 @@
       "productId": 3,
       "email": "mark@mark.com",
       "id": 1
+    },
+    {
+      "firstName": "pickle",
+      "lastName": "pickle",
+      "dates": [
+        "2020-01-30"
+      ],
+      "type": "Day",
+      "productId": 2,
+      "userId": 1,
+      "email": "pickle@pickle.com",
+      "id": 2
+    },
+    {
+      "firstName": "test",
+      "lastName": "test",
+      "dates": [
+        "2020-01-30"
+      ],
+      "type": "Day",
+      "productId": 3,
+      "email": "test@test.com",
+      "id": 3
+    },
+    {
+      "firstName": "testid",
+      "lastName": "testid",
+      "dates": [
+        "2020-01-30"
+      ],
+      "type": "Day",
+      "productId": 3,
+      "email": "test@testid.com",
+      "id": 4
+    },
+    {
+      "firstName": "id2",
+      "lastName": "id2",
+      "dates": [
+        "2020-01-30"
+      ],
+      "type": "Day",
+      "productId": 3,
+      "email": "idid@idid.com",
+      "id": 5
     }
   ],
   "users": [
@@ -100,6 +159,13 @@
       "name": "john",
       "admin": false,
       "id": 3
+    },
+    {
+      "email": "evans@bob.com",
+      "password": "$2a$10$jBHHZHt6Ov.qPkVk6v4yJOizhi0Hxo5xpXm0Pv3wXoBIIFxvpKe/6",
+      "name": "bob",
+      "admin": false,
+      "id": 4
     }
   ]
 }

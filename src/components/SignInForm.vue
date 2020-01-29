@@ -46,6 +46,11 @@
         >
           {{ hasAccountAction}}
         </a>
+        <v-alert 
+          v-if="error"
+          type="error">
+          {{ error }}
+        </v-alert>
       </span>
       <v-spacer />
     </v-card-actions>
@@ -60,6 +65,7 @@
       return {
         showPassword: false,
         newUser: true,
+        error: null,
         user: {
           name: '',
           email: '',
@@ -97,7 +103,9 @@
       },
       createUser() {
         this.$store.dispatch('createUser', this.user).then(() => {
-          console.log('yes')
+        })
+        .catch(err => {
+          this.error = err.response.data
         })
       },
       signInUser() {
@@ -106,7 +114,11 @@
           password: this.user.password
         })
         .then(() => {
-          console.log('You all logged in bro')
+          this.$router.push({ name: 'products' })
+
+        })
+        .catch(err => {
+          this.error = err.response.data
         })
       }
     }

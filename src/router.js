@@ -7,7 +7,7 @@ import ProductCreate from '@/views/ProductCreate.vue'
 
 Vue.use(Router)
 
-export default new Router({
+const router =  new Router({
   mode: 'history',
   routes: [
     {
@@ -29,7 +29,19 @@ export default new Router({
     {
       path: '/product-create',
       name: 'product-create',
-      component: ProductCreate
+      component: ProductCreate,
+      meta: { requiresAuth: true },
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  const signedIn = localStorage.getItem('user')
+  if (to.matched.some(record => record.meta.requiresAuth) && !signedIn) {
+    next('/')
+  }
+  next()
+    
+})
+
+export default router

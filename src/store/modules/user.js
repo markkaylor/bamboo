@@ -17,6 +17,10 @@ export const mutations = {
       user.token
     }`
   },
+  CLEAR_USER_DATA() {
+    localStorage.removeItem('user')
+    location.reload()
+  }
 }
 
 export const actions = {
@@ -33,6 +37,9 @@ export const actions = {
         commit('SET_USER', user)
       })
     })
+  },
+  signOutUser({ commit }) {
+    commit('CLEAR_USER_DATA')
   }
 }
 

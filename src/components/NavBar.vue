@@ -12,10 +12,19 @@
     </router-link>
       <v-btn 
         text
-        v-if="signedIn"
+        v-else
+        @click="signOut"
       >
-        Dashboard
+        Sign Out
       </v-btn>
+    <router-link
+      :to="{name: 'product-create'}"
+      v-if="isAdmin"
+    >
+      <v-btn text>
+        Add Product
+      </v-btn>
+    </router-link>
     <router-link :to="{name: 'products'}">
       <v-btn text>Products</v-btn>
     </router-link>
@@ -34,7 +43,15 @@ export default {
   },
   computed: {
     ...authComputed,
-    ...mapState(['user'])
+    ...mapState(['user']),
+    isAdmin() {
+      return this.user.user && this.user.user.admin
+    },
+  },
+  methods: {
+    signOut() {
+      this.$store.dispatch('signOutUser')
+    }
   }
 }
 </script>
