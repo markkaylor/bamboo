@@ -48,7 +48,9 @@
         </a>
         <v-alert 
           v-if="error"
-          type="error">
+          type="error"
+          dismissible
+        >
           {{ error }}
         </v-alert>
       </span>

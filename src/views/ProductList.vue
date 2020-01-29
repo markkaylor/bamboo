@@ -9,7 +9,8 @@
         :key="product.id"
         cols="12"
         sm="12"
-        md="4"
+        md="6"
+        lg="4"
       >
         <product-card 
           :product="product" 

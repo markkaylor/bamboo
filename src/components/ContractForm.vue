@@ -62,9 +62,9 @@
         v-for="(error, index) in this.errors"
         :key="index"
         type="error"
-        close
+        dismissible
       >
-      {{ error }}
+        {{ error }}
       </v-alert>
     </div>
   </v-form>
