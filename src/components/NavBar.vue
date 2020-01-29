@@ -1,6 +1,8 @@
 <template>
   <v-app-bar app>
-    <v-toolbar-title>{{ siteTitle }}</v-toolbar-title>
+    <v-toolbar-title>
+      {{ siteTitle }} 
+    </v-toolbar-title>
     <v-spacer />
     <router-link 
       :to="{name: 'sign-in'}" 
@@ -22,6 +24,8 @@
 
 <script>
 import { authComputed } from '@/store/helpers.js'
+import { mapState } from 'vuex'
+
 export default {
   data() {
     return {
@@ -29,7 +33,8 @@ export default {
     }
   },
   computed: {
-    ...authComputed
+    ...authComputed,
+    ...mapState(['user'])
   }
 }
 </script>

@@ -1,5 +1,7 @@
 <template>
-  <ContractForm :product="product" />
+  <ContractForm 
+    :product="product" 
+  />
 </template>
 
 <script>
@@ -9,7 +11,7 @@ import { mapState } from 'vuex'
   export default {
     props: {
       id: {
-        type: String
+        type: Number
       }
     },
     computed: {
@@ -18,6 +20,7 @@ import { mapState } from 'vuex'
       }),
     },
     created() {
+      console.log(typeof this.id)
       this.$store.dispatch('fetchProduct', this.id)
     },
     components: {

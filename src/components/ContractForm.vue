@@ -1,54 +1,69 @@
 <template>
-  <div>
+  <v-card 
+    class="pa-8 mx-auto"
+    width="1000px"
+  >
     <v-form>
-      <h1>Insure your Iphone</h1>
-      <v-text-field
-        label="First Name"
-        v-model="contract.firstName"
-      />
-      <v-text-field
-        label="Last Name"
-        v-model="contract.lastName"
-      />
-      <v-text-field
-        label="Email"
-        v-model="contract.email"
-        type="email"
-      />
-      <h3>Choose the type of contract</h3> 
-      <v-radio-group 
-        row 
-        v-model="contract.type"
-      >
-        <div
-          row 
-          v-for="type in product.contractsAvailable" 
-          :key="type"
+      <v-row>
+        <v-col 
+          sm="12" 
+          md="6"
         >
-          <v-radio 
-          :value="type"
-          :label="type" 
+          <h1>Insure your {{ product.name }}</h1>
+          <v-text-field
+            label="First Name"
+            v-model="contract.firstName"
+          />
+          <v-text-field
+            label="Last Name"
+            v-model="contract.lastName"
+          />
+          <v-text-field
+            label="Email"
+            v-model="contract.email"
+            type="email"
+          />
+        
+        <h3>Choose the type of contract</h3> 
+        <v-radio-group 
+          row 
+          v-model="contract.type"
+          v-if="product.contractsAvailable"
+        >
+          <div
+            row 
+            v-for="(type, index) in contractsAvailable" 
+            :key="index"
+          >
+            <v-radio
+              :value="type"
+              :label="type" 
+            />
+          </div>
+        </v-radio-group>
+        </v-col>
+        <v-col sm="12" md="6">
+        <div>
+          <h3>Choose Start and End Dates for your Contract</h3> 
+          <v-date-picker
+            landscape
+            range
+            full-width
+            v-model="contract.dates"
           />
         </div>
-      </v-radio-group>
-      <div>
-        <h3>Choose Start and End Dates for your Contract</h3> 
-        <v-date-picker
-          landscape
-          range
-          v-model="contract.dates"
-        />
-      </div>
-      <v-btn 
-        color="success"
-        block
-        class="mt-2"
-        @click="createContract"
-      >
-        Get A Quote!
-      </v-btn>
-    </v-form>
-  </div>
+        <v-btn 
+          color="success"
+          block
+          class="mt-2"
+          @click="createContract"
+        >
+          Get A Quote!
+        </v-btn>
+        </v-col>
+      </v-row>
+    </v-form>  
+  </v-card>
 </template>
 
 <script>
@@ -61,7 +76,8 @@ export default {
         firstName: '',
         lastName: '',
         dates: [],
-        type: ''
+        type: '',
+        productId: this.product.id,
       }
     }
   },
@@ -72,9 +88,15 @@ export default {
     }
   },
   computed: {    
-  //   daysSelected() {
-  //     return this.contract.dates[1] - this.contract.dates[0] + 1
-  //   },
+    daysSelected() {
+      if (this.contract.dates.length === 1) {
+        return this.contract.dates.length
+      }
+
+      let date1 = this.contract.dates[0].replace(/-/g,"")
+      let date2 = this.contract.dates[1].replace(/-/g,"")
+      return date2 - date1 + 1
+    },
     daysAvailable() {
       let numDays = 0
 
@@ -91,28 +113,27 @@ export default {
       }
 
       return numDays
-    }
+    },
+    contractsAvailable() {
+      return this.product.contractsAvailable.filter(product => product !== "")
+    },
+    validateDays() {
+      return this.daysSelected === this.daysAvailable
+    },
   },
   methods: {
-  //   validateDays() {
-  //     if (daysSelected === daysAvailable) {
-  //       console.log('Success!')
-  //     } else {
-  //       console.log('uh oh please try again')
-  //     }
-  //   }
-
     createContract() {
-      this.$store.dispatch('createContract', this.contract)
+      if (this.validateDays) {
+        this.$store.dispatch('createContract', this.contract)
         .then(() => {
           this.$router.push({
-            name: 'products',
-            props: { contractSucccess: true }
+            name: 'products',            
           })
         })
         .catch(() => {
           console.log("there was an error creating your contract")
         })
+      }
     }
   },
 }

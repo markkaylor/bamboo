@@ -1,5 +1,8 @@
 <template>
-  <v-card width="500">
+  <v-card 
+    width="500" 
+    class="mx-auto"
+  >
     <v-form>
       <v-card-title>Add a Product:</v-card-title>
       <v-card-text> 
@@ -10,8 +13,27 @@
         <v-textarea 
           v-model="product.description"
           outlined
+          height="75"
           label="Product Description"
         />
+        
+        <v-text-field
+          v-model="itemValue"
+          placeholder="Press enter to add item"
+          label="Add Coverage"
+          @keyup.enter="addItem"
+        />
+
+        <v-chip
+          v-for="item in product.coverage" :key="item"
+          class="ma-2 coverage"
+          close
+          small
+          @click:close="product.coverage.splice(index, 1)"
+        > 
+          {{ item }}
+        </v-chip>     
+          
       </v-card-text>
       <v-card-title>What types of contracts are available?</v-card-title>   
       <v-card-text>
@@ -19,21 +41,22 @@
           <v-checkbox 
             label="Day"
             value="Day"
-            v-model="product.contractsAvailable.day"
+            v-model="product.contractsAvailable"
           />
           <v-checkbox 
             label="Weekend"
             value="Weekend"
-            v-model="product.contractsAvailable.weekend"
+            v-model="product.contractsAvailable"
           />
           <v-checkbox 
             label="Week"
             value="Week"
-            v-model="product.contractsAvailable.week"
+            v-model="product.contractsAvailable"
           />
         </v-row>
         <v-btn 
           color="success"
+          block
           @click="createProduct"
         >
           Submit
@@ -47,6 +70,7 @@
 export default {
   data() {
     return {
+      itemValue: '',
       product: this.createFreshProductObject(),       
     }
   },
@@ -56,6 +80,10 @@ export default {
     // },
   },
   methods: {
+    addItem() {
+      this.product.coverage.push(this.itemValue)
+      this.itemValue = ''
+    },
     createProduct() {
       this.$store
         .dispatch('createProduct', this.product)
@@ -74,11 +102,7 @@ export default {
       return {
         name: '',
         description: '',
-        contractsAvailable: {
-          day: '',
-          weekend: '',
-          week: '',
-        },
+        contractsAvailable: [],
         coverage: []
       }
     },

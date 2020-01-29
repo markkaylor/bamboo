@@ -1,8 +1,10 @@
 <template>
   <v-app>
     <nav-bar />
-    <v-content width="1200" class="mx-auto mt-5"> 
-      <router-view />
+    <v-content class="mt-5"> 
+      <v-container fluid>
+        <router-view />
+      </v-container>
     </v-content>
   </v-app>
 </template>

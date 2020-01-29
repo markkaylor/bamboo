@@ -1,114 +1,82 @@
 {
   "products": [
     {
-      "name": "iPhone",
-      "description": "Insure your iPhone! we have many short term policies available!",
-      "contractsAvailable": {
-        "day": "Day",
-        "weekend": "Weekend",
-        "week": "Week"
-      },
+      "name": "orange",
+      "description": "orangeorangeorangeorangeorangeorangeorangeorangeorangeorange",
+      "contractsAvailable": [
+        "Day"
+      ],
       "coverage": [],
       "id": 1
     },
     {
-      "name": "A new test product",
-      "description": "with wrods about word",
-      "contractsAvailable": {
-        "day": "Day",
-        "weekend": "Weekend",
-        "week": ""
-      },
+      "name": "tablet",
+      "description": "asdfsdfsdfadsfdsfsd",
+      "contractsAvailable": [
+        "Day",
+        "Weekend",
+        "Week"
+      ],
       "coverage": [],
       "id": 2
     },
     {
-      "name": "Testing again a product",
-      "description": "sadfsdfds",
-      "contractsAvailable": {
-        "day": "Day",
-        "weekend": "",
-        "week": ""
-      },
-      "coverage": [],
+      "name": "iPhone",
+      "description": "Helvetica artisan cliche deep v truffaut. Organic taiyaki jean shorts meh gentrify wayfarers master cleanse kickstarter actually asymmetrical.",
+      "contractsAvailable": [
+        "Day",
+        "Weekend"
+      ],
+      "coverage": [
+        "Theft",
+        "Loss",
+        "Damage"
+      ],
       "id": 3
     },
     {
-      "name": "dfad",
-      "description": "afdfds",
-      "contractsAvailable": {
-        "day": "",
-        "weekend": "Weekend",
-        "week": ""
-      },
-      "coverage": [],
+      "name": "iPad",
+      "description": "height height height height height height height height height height height height height height height.",
+      "contractsAvailable": [
+        "Weekend",
+        "Week",
+        "Day"
+      ],
+      "coverage": [
+        "Theft",
+        "Loss",
+        "Damage"
+      ],
       "id": 4
+    },
+    {
+      "name": "Macbook Pro",
+      "description": "They're expensive so you better keep it safe!",
+      "contractsAvailable": [
+        "Day",
+        "Weekend",
+        "Week"
+      ],
+      "coverage": [
+        "Theft",
+        "Loss",
+        "Damage"
+      ],
+      "id": 5
     }
   ],
   "contracts": [
     {
-      "firstName": "bob",
-      "lastName": "evans",
+      "firstName": "oh",
+      "lastName": "hi",
       "dates": [
-        "2020-01-28",
-        "2020-01-29"
+        "2020-01-01",
+        "2020-01-02"
       ],
       "type": "Weekend",
-      "email": "bob@evans.com",
+      "productId": 3,
+      "email": "mark@mark.com",
       "id": 1
-    },
-    {
-      "firstName": "Test",
-      "lastName": "testlast",
-      "dates": [
-        "2020-01-28"
-      ],
-      "type": "Day",
-      "email": "test@last.com",
-      "id": 2
-    },
-    {
-      "firstName": "asdfadsf",
-      "lastName": "asdfads",
-      "dates": [
-        "2020-01-28",
-        "2020-01-29"
-      ],
-      "type": "Weekend",
-      "email": "sdfadsf",
-      "id": 3
-    },
-    {
-      "firstName": "asdfdasf",
-      "lastName": "asdfasd",
-      "dates": [
-        "2020-01-28",
-        "2020-01-30"
-      ],
-      "type": "Weekend",
-      "email": "asdfasdf@sdafsdf.com",
-      "id": 4
-    },
-    {
-      "firstName": "test",
-      "lastName": "test",
-      "dates": [
-        "2020-01-20",
-        "2020-01-24"
-      ],
-      "type": "Week",
-      "email": "test@email.com",
-      "id": 5
-    },
-    {
-      "firstName": "adsdfg",
-      "lastName": "sdf",
-      "dates": [
-        "2020-01-20",
-        "2020-01-24"
-      ],
-      "type": "Week",
-      "id": 6
     }
   ],
   "users": [
@@ -116,7 +84,7 @@
       "email": "pickle@pickle.com",
       "password": "$2a$10$D6xkJqzlFOBRDxAds0OcOepKvrPPkCYxhUwKn3MT4Jm01kjXKerp.",
       "name": "pickle",
-      "admin": false,
+      "admin": true,
       "id": 1
     },
     {

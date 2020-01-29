@@ -1,5 +1,8 @@
 <template>
-  <v-card width="400" class="mx-auto">
+  <v-card 
+    width="400" 
+    class="mx-auto"
+  >
     <v-card-title>
       <h1 class="display-1">{{ action }}</h1>
     </v-card-title>
