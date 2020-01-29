@@ -1,4 +1,4 @@
-# founders
+# Bamboo
 
 ## Project setup
 ```
