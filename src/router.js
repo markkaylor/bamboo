@@ -13,7 +13,7 @@ const router =  new Router({
     {
       path: '/',
       name: 'sign-in',
-      component: SignIn
+      component: SignIn,
     },
     {
       path: '/product/:id',
