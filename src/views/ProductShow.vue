@@ -12,8 +12,6 @@
         <CoverageChips :product="product" />
       </v-col>
     </v-row>
-    
-    
     <v-divider />
     <ContractForm 
       :product="product"

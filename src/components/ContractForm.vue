@@ -1,4 +1,5 @@
 <template>
+  <!-- TODO: Create base components for form and form inputs -->
   <v-form>
     <v-row>
       <v-col 
@@ -37,7 +38,10 @@
         </div>
       </v-radio-group>
       </v-col>
-      <v-col sm="12" md="6">
+      <v-col 
+        sm="12" 
+        md="6"
+      >
       <div>
         <h3>Choose Start and End Dates for your Contract</h3> 
         <v-date-picker
@@ -77,6 +81,7 @@
 import {mapState} from 'vuex'
 
 export default {
+  // TODO: A contract should have a userId property
   data() {
     return { 
       errors: [],
@@ -86,7 +91,6 @@ export default {
         dates: [],
         type: '',
         productId: this.product.id,
-        userId: null
       }
     }
   },
@@ -116,7 +120,7 @@ export default {
       return date2 - date1 + 1
     },
     /**
-     * Turns type of contact (day, weekend, week) into a number
+     * Turns type of contract (day, weekend, week) into a number
      */
     daysAvailable() {
       let numDays = 0

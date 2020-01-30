@@ -3,6 +3,10 @@
     width="500" 
     class="mx-auto"
   >
+    <!-- 
+    TODO: Create base components for form form inputs,
+    Move this form to its own component 
+    -->
     <v-form>
       <v-card-title>
         Add a Product:
@@ -35,7 +39,6 @@
         > 
           {{ item }}
         </v-chip>     
-          
       </v-card-text>
       <v-card-title>
         What types of contracts are available?

@@ -7,6 +7,10 @@
       <h1 class="display-1">{{ action }}</h1>
     </v-card-title>
     <v-card-text>
+      <!-- TODO: 
+        Create base components for form and form inputs 
+        Create separate components for sign in sign up
+      -->
       <v-form>
         <v-text-field
           label="Name"
