@@ -44,6 +44,7 @@
       >
       <div>
         <h3>Choose Start and End Dates for your Contract</h3> 
+        <!-- TODO: Adjust datepickler for mobile view -->
         <v-date-picker
           landscape
           range
