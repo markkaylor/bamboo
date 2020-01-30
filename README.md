@@ -17,9 +17,9 @@ yarn serve
 yarn start
 ```
 
-A user can create an account, or login if they already have one.  They can browse the products available to insure, the number of days they can insure them, and what the insurance covers.
+A user can create an account, or login if they already have one.  A user can browse products available to insure.  Each product has different contract durations and difference coverage plans.
 
-Selecting a product the user has the option to submit a contract.  They can select the type of contract they want (day, week, weekend) and pick the dates they want to insure. 
+By selecting a product a user has the option to submit a contract.  The user can select from the available contract durations (day, weekend, week), and then choose the specific dates accordingly. 
 
 An admin can login and create products.
 
