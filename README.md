@@ -1,24 +1,25 @@
 # Bamboo
 
 ## Project setup
+
+### Install dependencies
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### Launch the Vue dev server
 ```
 yarn serve
 ```
 
-### Compiles and minifies for production
+### In another terminal, launch the json-server fake REST API.
 ```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
+yarn start
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+A user can create an account, or login if they already have one.  They can browse the products available to insure, the number of days they can insure them, and what the insurance covers.
+
+Selecting a product the user has the option to submit a contract.  They can select the type of contract they want (day, week, weekend) and pick the dates they want to insure. 
+
+An admin can login and create products.
+

@@ -4,7 +4,9 @@
     class="mx-auto"
   >
     <v-form>
-      <v-card-title>Add a Product:</v-card-title>
+      <v-card-title>
+        Add a Product:
+      </v-card-title>
       <v-card-text> 
         <v-text-field 
           v-model="product.name"
@@ -35,7 +37,9 @@
         </v-chip>     
           
       </v-card-text>
-      <v-card-title>What types of contracts are available?</v-card-title>   
+      <v-card-title>
+        What types of contracts are available?
+      </v-card-title>   
       <v-card-text>
         <v-row justify="space-around">
           <v-checkbox 
@@ -74,11 +78,6 @@ export default {
       product: this.createFreshProductObject(),       
     }
   },
-  computed: {
-    // dateRangeText () {
-    //   return this.product.contract.dates.join(' ~ ')
-    // },
-  },
   methods: {
     addItem() {
       this.product.coverage.push(this.itemValue)
@@ -88,10 +87,6 @@ export default {
       this.$store
         .dispatch('createProduct', this.product)
         .then(() => {
-          // this.$router.push({
-          //   name: 'product-show',
-          //   params: { id: this.product.id }
-          // })
           this.product = this.createFreshProductObject()
         })
         .catch(() => {

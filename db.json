@@ -166,6 +166,20 @@
       "name": "bob",
       "admin": false,
       "id": 4
+    },
+    {
+      "email": "newuser@newuser.com",
+      "password": "$2a$10$zHJmIHXErWswQCIme91Oc.bvYK0iki9vvTLwsMRE1qE6DwsKJmlTi",
+      "name": "newuser",
+      "admin": false,
+      "id": 5
+    },
+    {
+      "email": "bobob@bobob.com",
+      "password": "$2a$10$ye8T94zEq8jmPSf4MV4vd.MCqbWRjRxFKGf0YksKKlFjKSKfg.W8G",
+      "name": "bobob",
+      "admin": false,
+      "id": 6
     }
   ]
 }

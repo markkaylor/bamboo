@@ -98,6 +98,9 @@ export default {
   },
   computed: {    
     ...mapState(['user']),
+    /**
+     * Calculates the number of days available for a contract 
+     */
     daysSelected() {
       if (this.contract.dates.length === 1) {
         return this.contract.dates.length
@@ -112,6 +115,9 @@ export default {
 
       return date2 - date1 + 1
     },
+    /**
+     * Turns type of contact (day, weekend, week) into a number
+     */
     daysAvailable() {
       let numDays = 0
 
@@ -129,31 +135,75 @@ export default {
 
       return numDays
     },
+    /**
+     * Filter out empty contract types
+     */
     contractsAvailable() {
       return this.product.contractsAvailable.filter(product => product !== "")
     },
+    /**
+     * Determine if the number of days selected match the number of days available for the contract type
+     */
     hasCorrectDaysNumber() {
       return this.daysSelected === this.daysAvailable
     },
   },
   methods: {
+    /**
+     * Validation returns an error if no dates are selected or they don't match the contract type
+     * TODO: This validation should be replaced by vuelidate
+     */
     hasCorrectDates() {
       if (this.contract.dates.length === 0) {
-        return this.errors.push('You need to choose the dates for your contract')
+        this.errors.push('You need to choose the dates for your contract')
       }
 
       if (!this.hasCorrectdaysNumber) {
-        return this.errors.push('You need to select the correct number of days')
+        this.errors.push('You need to select the correct number of days')
       }
     },
+    /**
+     * Check user is signed in
+     * TODO: This validation should be replaced by vuelidate
+     */
     isUserSignedOut() {
       if (!this.user.user) {
         this.errors.push('You need to create an account or sign in')
       }
     },
-    createContract() {
+    /**
+     * Check first name is not empty
+     * TODO: This validation should be replaced by vuelidate
+     */
+    hasFirstName() {
+      if(!this.user.firstName) {
+        this.errors.push('Please fill in your first name')
+      }
+    },
+    /**
+     * Check last name is not empty
+     * TODO: This validation should be replaced by vuelidate
+     */
+    hasLastName() {
+      if(!this.user.lastName) {
+        this.errors.push('Please fill in your last name')
+      }
+    },
+    /**
+     * Validates the form is correctly filled out
+     * TODO: Validations should be replaced by vuelidate
+     */
+    validateInputs() {
       this.isUserSignedOut()
       this.hasCorrectDates()
+      this.hasFirstName()
+      this.hasLastName()
+    },
+    /**
+     * Submit form
+     */
+    createContract() {
+      this.validateInputs()
       if (this.hasCorrectDaysNumber && this.user) {
         this.$store.dispatch('createContract', this.contract)
         .then(() => {

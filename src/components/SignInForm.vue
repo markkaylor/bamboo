@@ -96,20 +96,33 @@
         return this.newUser ? this.createUser : this.signInUser
       }
     },
+    /**
+     * Toggle sign in or sign up
+     */
     methods: {
       toggleHasAccount() {
         this.newUser = !this.newUser
       },
+      /**
+       * Toggle show hide password
+       */
       toggleShowPassword() {
         this.showPassword = !this.showPassword
       },
+      /**
+       * Sign user up or return error
+       */
       createUser() {
         this.$store.dispatch('createUser', this.user).then(() => {
+          this.$router.push({ name: 'products' })
         })
         .catch(err => {
           this.error = err.response.data
         })
       },
+      /**
+       * Sign user in and redirect to product or return errors
+       */
       signInUser() {
         this.$store.dispatch('signInUser', {
           email: this.user.email,
@@ -117,7 +130,6 @@
         })
         .then(() => {
           this.$router.push({ name: 'products' })
-
         })
         .catch(err => {
           this.error = err.response.data

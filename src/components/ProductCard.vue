@@ -12,24 +12,22 @@
           {{ product.name }}
         </v-card-title>
       </v-card-text>
-      
-        <v-card-text class="flex-spread">
-          <CoverageChips :product="product" />
-          {{ product.description }}
-          <div 
-            class="flex-end"
+      <v-card-text class="flex-spread">
+        <CoverageChips :product="product" />
+        {{ product.description }}
+        <div 
+          class="flex-end"
+        >
+          <v-divider class="mb-1 mt-1"/>
+          <span class="mb-0 font-weight-bold">Contracts Available: | </span>
+          <span
+            v-for="type in contracts" 
+            :key="type"              
           >
-            <v-divider class="mb-1 mt-1"/>
-            <span class="mb-0 font-weight-bold">Contracts Available: | </span>
-            <span
-              v-for="type in contracts" 
-              :key="type"              
-            >
-              {{ type }} |
-            </span> 
-          </div>         
-        </v-card-text>
-      
+            {{ type }} |
+          </span> 
+        </div>         
+      </v-card-text>
     </v-card>
   </router-link>
 </template>

@@ -44,11 +44,17 @@ export default {
   computed: {
     ...authComputed,
     ...mapState(['user']),
+    /**
+     * Check if the current user is an admin
+     */
     isAdmin() {
       return this.user.user && this.user.user.admin
     },
   },
   methods: {
+    /**
+     * Sign user out
+     */
     signOut() {
       this.$store.dispatch('signOutUser')
     }
